@@ -1,4 +1,5 @@
-# spotify-clone
+# Spotify Clone
+This project is a clone spotify web page.
 
 ## Project setup
 ```
