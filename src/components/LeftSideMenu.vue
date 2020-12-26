@@ -32,7 +32,7 @@
             </div>
         </section>
         
-        <section id="çalma-listesi">
+        <section id="play-list-left">
             <h2>Çalma Listeleri</h2>
             <div class="calma-listesi-olustur lists">
                 <div class="icon-play-list">
@@ -49,6 +49,16 @@
                 </div>
                 <h3>Beğenilen Şarkılar</h3>
             </div>
+        </section>
+
+        <section id="all-library">
+            <div class="play-library">
+                <div class="library-names" v-for="album in albums" :key="album">
+                    <h2>{{album.title | moreThanChar(20)}}</h2>
+                </div>
+            </div>
+
+
         </section>
 
 
@@ -77,20 +87,49 @@ import FavIcon from '../assets/icons/begen.svg'
             FavIcon,
         },
         data(){
-            return{
-                
-                
+            return{                
+                albums:[]
             }
+        },
+
+        created(){
+              fetch("https://jsonplaceholder.typicode.com/albums")
+              .then(res => res.json())
+              .then(data => this.albums = data)
+             .catch(err => console.log(err))
+        },
+       
+       
+    
+        
+        filters:{
+            moreThanChar(value){
+                if(value && value.length > 20){
+                    value = value.slice(0,20)
+                }
+                return value
+                  }
+              }
+           
+             
         }
-    }
 </script>
 
 <style>
+body,html{
+    font-family: 'Times New Roman', Times, serif;
+}
 #left-side-menü{
     background-color:#000000;
-    width: 100%;
+    width: 12%;
     height: 100vh;
     color: #C6C6C6;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+
+    
 }
 a{
     text-decoration: none;
@@ -126,10 +165,12 @@ a{
     background-color: #282828;
 }
 
-#çalma-listesi
+#play-list-left 
 {
     width: 90%;
     margin: 0 auto;
+    border-bottom: 1px solid #b3b3b3b6;
+    padding-bottom: 1rem;
 }
 
 .lists
@@ -169,10 +210,42 @@ a{
     margin-left:5px ;
 
     margin-right: 1.8rem;
+}
 
+#all-library{
+    overflow-y: scroll;
+    width: 100%;
+   height: 65%;
+}
+.play-library{
+    width: 80%;
+    margin: 0 auto;
+}
 
+.library-names h2{
+     font-size: 1.2rem; 
+     font-weight: 500;
 
 }
+
+
+
+
+::-webkit-scrollbar { 
+    width: 10px; 
+    } 
+    /* Track */ 
+::-webkit-scrollbar-track {
+    background: #000000;
+ } /* Handle */ 
+::-webkit-scrollbar-thumb { 
+     background:#555; 
+    } 
+    /* Handle on hover */ 
+::-webkit-scrollbar-thumb:hover {
+    background:#888; 
+     }
+
 
 
 </style>

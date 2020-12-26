@@ -20,8 +20,7 @@ import LeftSide from '@/components/LeftSideMenu'
 
 export default {
   components:{
-    LeftSide
-
+    LeftSide,
   }
 }
 </script>
@@ -39,6 +38,6 @@ body{
 #app
 {
   display: grid;
-  grid-template-columns: 15% 80%;
+  grid-template-columns: 12% 80%;
 }
 </style>

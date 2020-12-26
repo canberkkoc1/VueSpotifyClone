@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="search-views">
         hahahahahah
     </div>
 </template>
@@ -13,5 +13,9 @@
 <style>
 body{
     color: white;
+}
+
+#search-views{
+    margin-left: 20rem;
 }
 </style>
