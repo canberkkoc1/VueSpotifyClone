@@ -12,7 +12,8 @@ import Card from '@/components/Cards'
         },
         data(){
             return{
-                titles:["Kısayollar","Yakında Çalınanlar","Şimdi Popüler Olanlar","Günlük Müzik İhtiyacın","Popüler Çalma Listeleri"]
+                titles:["Kısayollar","Yakında Çalınanlar","Şimdi Popüler Olanlar","Günlük Müzik İhtiyacın","Popüler Çalma Listeleri"],
+                titlesSearch:["En çok dinlediğin türler","Hepsine göz at",]
             }
         }
        

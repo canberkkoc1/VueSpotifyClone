@@ -30,6 +30,7 @@ export default {
 
 <style>
 body{
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -37,7 +38,6 @@ body{
 }
 #app
 {
-  display: grid;
-  grid-template-columns: 12% 80%;
+  
 }
 </style>
