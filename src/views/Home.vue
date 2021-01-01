@@ -13,7 +13,7 @@ import Card from '@/components/Cards'
         data(){
             return{
                 titles:["Kısayollar","Yakında Çalınanlar","Şimdi Popüler Olanlar","Günlük Müzik İhtiyacın","Popüler Çalma Listeleri"],
-                titlesSearch:["En çok dinlediğin türler","Hepsine göz at",]
+                
             }
         }
        
@@ -23,7 +23,8 @@ import Card from '@/components/Cards'
 
 <style >
 #home-view{
-    width: 100vw;
+    min-width: 100vw;
     min-height: 100vh;
+    margin-bottom: 13rem;
 }
 </style>

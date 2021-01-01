@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <LeftSide></LeftSide>
-
-
-
-
-
-
-
+    <PlayBar></PlayBar>
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
   
@@ -17,10 +11,12 @@
 
 <script>
 import LeftSide from '@/components/LeftSideMenu'
+import PlayBar from '@/components/PlayBar'
 
 export default {
   components:{
     LeftSide,
+    PlayBar,
   }
 }
 </script>

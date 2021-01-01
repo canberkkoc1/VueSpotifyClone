@@ -6,7 +6,7 @@
                 <i class="fa fa-search w3-xlarge"></i>
             </div>
             <div class="header-search">
-                <h1>En çok dinlediğin türler</h1>
+                <h1 class="Top-lis">En çok dinlediğin türler</h1>
             </div>
             <div class="searc-cards">
                 <div class="searc-image" v-for="index in 3" :key="index">
@@ -16,21 +16,48 @@
                 </div>
             </div>
             
+            
+           <div class="m-card-l">
+               <div class="header-all-card">
+                    <h1 class="all-card">Hepsine göz at</h1>
+               </div>
+               <div class="all-m-cards" >
+                   <div class="m-card" v-for="index in 15" :key="index" :style="{background:randomColor(index)}">
+                       <img  class="img-for-card"  :src="`https://loremflickr.com/151/149/london?random=${index*9}`" alt="">
+                       <h1>{{titlesAll[index-1]}}</h1>
+                   </div>
+               </div>
+           </div>
         </div>
+            
     </div>
 </template>
 
 <script>
+
+
     export default {
+        name:"Search",
         componets:{
+           
             
+
         },
         data(){
             return{
                 images:[],
-                titlesType:["Hip Hop","R&B","Pop"]
+                titlesType:["Hip Hop","R&B","Pop"],
+                colorGet:{},
+                titlesAll:["Podcast'ler","Senin için Hazırlandı","Listeler","Yeni Çıkanlar","Keşfet","Concerts","2020 Özeti","Ruh Hali","Evde","Öğrenci","Dönem müzikleri","Uyku","Chill","Odaklan","Caz"]
             }
         },
+
+        methods:{
+            randomColor(index){
+                const r = () => Math.floor(256* Math.random());
+                return this.colorGet[index] || (this.colorGet[index] = `linear-gradient(83deg,rgba(${r()},${r()},${r()}) 0% ,rgba(${r()},${r()},${r()}) 100% )`)
+            }
+        }
         
        
     }
@@ -145,8 +172,40 @@ body{
     font-weight: 700;
     font-size: 3.2rem;
 }
-h1{
+.Top-lis
+{
     font-size: 3rem;
     font-weight: 700;
+}
+.m-card
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.all-m-cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 3rem;
+    margin-bottom: 2rem;
+    padding-left:4rem;
+    position: relative;
+}
+
+.img-for-card{
+    position: absolute; 
+    right: -10px; 
+    bottom: -16px;
+    width: 100px; 
+     transform:rotate(.1turn);
+
+}
+.m-card h1{
+    font-size: 2rem;
+    margin-left: .5rem;
 }
 </style>

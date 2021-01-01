@@ -22,7 +22,7 @@ const routes = [
     name: "Kütüphane",
 
     component: () =>
-      import(/* webpackChunkName: "search" */ "../views/Search.vue"),
+      import(/* webpackChunkName: "search" */ "../views/Kutuphane.vue"),
   },
 ];
 

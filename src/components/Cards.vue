@@ -7,7 +7,7 @@
         <div class="cards">
             <div class="card" v-for="(img,index) in images" :key="index">
                 <div class="card-images">
-                    <img :src="`https://loremflickr.com/151/149/london?random=${index*8}`" alt="image not found">
+                    <img :src="`https://loremflickr.com/151/149/paris?random=${index*8}`" alt="image not found">
                 </div>
                 <div class="card-body">
                     
@@ -75,6 +75,7 @@ import PlayIcon from '../assets/icons/play-button.svg'
     margin-bottom:3rem ;
     margin-left: 17rem;
     position: relative;
+    
     
 }
 
